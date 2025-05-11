@@ -29,27 +29,17 @@
                             {{ city if city else 'City' }}
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="cityDropdown">
-                            {% for city_option in ['Tacoma', 'Seattle' ] %}
+                            {% for city_option in ['Tacoma', 'Seattle', 'Olympia' ] %}
                                 <li><a class="dropdown-item" href="{{ url_for('index', city=city_option, category=category) }}">{{ city_option }}</a></li>
                             {% endfor %}
                         </ul>
                     </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle active" href="#" id="categoryDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        {{ category if category else 'Category' }}
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="categoryDropdown">
-                        {% for category_option in ['restaurants', 'hotels', 'attractions'] %}
-                            <li>
-                                <a class="dropdown-item" href="{{ url_for('index', city=city, category=category_option) }}">
-                                    {{ category_option }}
-                                </a>
-                            </li>
-                        {% endfor %}
-                    </ul>
-                </li>
-
                 </ul>
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-item nav-link" href="{{ url_for('about') }}" id="aboutButton" role="button" aria-expanded="false">
+                        About
+                    </a>
+                </div>
             </div>
         </div>
     </nav>
@@ -61,7 +51,7 @@
     <!-- Footer -->
     <footer class="bg-light py-4 mt-5">
         <div class="container">
-            <p class="text-center text-muted mb-0">© 2023 My Website. All rights reserved.</p>
+            <p class="text-center text-muted mb-0">© 2025 Trip Planner App, Preston Harms. All rights reserved.</p>
         </div>
     </footer>
 
